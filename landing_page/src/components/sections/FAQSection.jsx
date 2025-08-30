@@ -41,18 +41,18 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+    <section id="faq" className="py-16 lg:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Got questions? We've got answers. Here are the most common questions families ask us.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 lg:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
@@ -60,14 +60,14 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-6 lg:px-8 py-4 lg:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-base lg:text-lg font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
                   <svg
-                    className={`w-6 h-6 text-purple-600 transition-transform duration-200 ${
+                    className={`w-5 h-5 lg:w-6 lg:h-6 text-purple-600 transition-transform duration-200 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                     fill="none"
@@ -85,14 +85,14 @@ const FAQSection = () => {
               </button>
 
               <div
-                className={`px-8 transition-all duration-300 ease-in-out ${
+                className={`px-6 lg:px-8 transition-all duration-300 ease-in-out ${
                   openIndex === index
-                    ? 'max-h-96 opacity-100 pb-6'
+                    ? 'max-h-96 opacity-100 pb-4 lg:pb-6'
                     : 'max-h-0 opacity-0 overflow-hidden'
                 }`}
               >
-                <div className="border-t border-gray-200 pt-6">
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                <div className="border-t border-gray-200 pt-4 lg:pt-6">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base lg:text-lg">
                     {faq.answer}
                   </p>
                 </div>
@@ -103,14 +103,14 @@ const FAQSection = () => {
 
         {/* Contact CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 text-sm lg:text-base">
             Still have questions? We're here to help!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+            <button className="px-6 lg:px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base">
               Contact Support
             </button>
-            <button className="px-8 py-3 bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-600 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+            <button className="px-6 lg:px-8 py-3 bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-600 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base">
               Live Chat
             </button>
           </div>

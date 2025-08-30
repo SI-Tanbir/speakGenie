@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
 const Hero = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const benefitTags = [
     {
       id: 1,
@@ -36,19 +32,15 @@ const Hero = () => {
     { id: 3, title: 'Calm Garden', duration: '4 min', icon: '🌱' }
   ];
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative bg-white py-16 lg:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:space-y-10">
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
                 Mindfulness &{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-green-600">
                   Meditation
@@ -57,18 +49,15 @@ const Hero = () => {
               </h1>
               
               {/* Description */}
-              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                 Fun, story-based meditations that build focus, kindness, and confidence. 
                 Safe, ad-free, and crafted with child-development experts.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={openModal}
-                className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg"
-              >
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
                 Start Free Trial
               </button>
               <button className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
@@ -77,25 +66,25 @@ const Hero = () => {
             </div>
 
             {/* Benefit Tags */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               {benefitTags.map((tag) => (
                 <div
                   key={tag.id}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-full border ${tag.color} transition-all duration-200 hover:scale-105`}
+                  className={`flex items-center space-x-2 px-4 py-2.5 rounded-full border ${tag.color} transition-all duration-200 hover:scale-105`}
                 >
-                  <span className="text-lg">{tag.icon}</span>
-                  <span className="font-medium text-sm">{tag.title}</span>
+                  <span className="text-lg sm:text-xl">{tag.icon}</span>
+                  <span className="font-medium text-sm sm:text-base">{tag.title}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Content - Today's Journey Card */}
-          <div className="relative">
+          <div className="relative order-first lg:order-last">
             {/* Background Placeholder */}
-            <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl shadow-2xl relative">
+            <div className="w-full h-80 sm:h-96 lg:h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl shadow-2xl relative">
               {/* Today's Journey Card */}
-              <div className="absolute top-8 right-8 w-80 bg-white rounded-2xl shadow-xl p-6 transform rotate-3 hover:rotate-0 transition-all duration-300">
+              <div className="absolute top-6 right-6 w-72 sm:w-80 bg-white rounded-2xl shadow-xl p-6 transform rotate-2 hover:rotate-0 transition-all duration-300">
                 <div className="space-y-4">
                   {/* Header */}
                   <div className="flex items-center space-x-3">
@@ -140,14 +129,14 @@ const Hero = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute top-20 left-8 w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center animate-bounce">
-                <span className="text-2xl">🧘</span>
+              <div className="absolute top-16 left-6 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center animate-bounce">
+                <span className="text-xl sm:text-2xl">🧘</span>
               </div>
-              <div className="absolute bottom-20 left-16 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-xl">🌿</span>
+              <div className="absolute bottom-16 left-12 w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center animate-pulse">
+                <span className="text-lg sm:text-xl">🌿</span>
               </div>
-              <div className="absolute top-32 right-32 w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center animate-ping">
-                <span className="text-2xl">✨</span>
+              <div className="absolute top-24 right-20 w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 rounded-full flex items-center justify-center animate-ping">
+                <span className="text-xl sm:text-2xl">✨</span>
               </div>
             </div>
           </div>
@@ -155,9 +144,9 @@ const Hero = () => {
       </div>
 
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-      <div className="absolute top-0 right-0 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-0 left-0 w-48 h-48 sm:w-72 sm:h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-20 w-48 h-48 sm:w-72 sm:h-72 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
     </section>
   );
 };

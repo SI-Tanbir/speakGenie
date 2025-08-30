@@ -6,7 +6,8 @@ const ProgramsSection = () => {
       description: "5-minute stories with animal friends that teach belly-breathing, relaxing sounds, and gentle stretching.",
       features: ["Cozy Corner", "Calm Music", "Sticker Badges"],
       image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=500&fit=crop&crop=face",
-      color: "from-purple-500 to-purple-600"
+      color: "from-purple-500 to-purple-600",
+      bgColor: "bg-purple-50"
     },
     {
       id: 2,
@@ -14,7 +15,8 @@ const ProgramsSection = () => {
       description: "Mindset stories, focus timers, and kindness practices that build confidence and classroom readiness.",
       features: ["Focus Timer", "Gratitude Notes", "Streak Rewards"],
       image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=500&fit=crop&crop=face",
-      color: "from-green-500 to-green-600"
+      color: "from-green-500 to-green-600",
+      bgColor: "bg-green-50"
     },
     {
       id: 3,
@@ -22,30 +24,31 @@ const ProgramsSection = () => {
       description: "Longer meditations, reframing thoughts, and sleep stories for deeper rest and emotional balance.",
       features: ["Mindset Minis", "Sleep Stories", "Goal Cards"],
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=500&fit=crop&crop=face",
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50"
     }
   ];
 
   return (
-    <section id="programs" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+    <section id="programs" className="py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
             Programs for Every Age
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Pick 'n' mix and match. Each program grows with your child.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {programs.map((program) => (
             <div
               key={program.id}
-              className="group bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="group bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
                 <img
                   src={program.image}
                   alt={program.title}
@@ -55,20 +58,20 @@ const ProgramsSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+              <div className="p-6 lg:p-8">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-purple-600 transition-colors duration-300">
                   {program.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+                <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 text-sm lg:text-base">
                   {program.description}
                 </p>
 
                 {/* Feature Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
                   {program.features.map((feature, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full border border-gray-200"
+                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs lg:text-sm font-medium rounded-full border border-gray-200"
                     >
                       {feature}
                     </span>
@@ -76,7 +79,7 @@ const ProgramsSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 bg-gradient-to-r ${program.color} text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg`}>
+                <button className={`w-full py-2.5 lg:py-3 bg-gradient-to-r ${program.color} text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base`}>
                   Learn More
                 </button>
               </div>

@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero';
 import WhySection from './components/sections/WhySection';
 import ProgramsSection from './components/sections/ProgramsSection';
 import FeaturesSection from './components/sections/FeaturesSection';
+import ParentHubSection from './components/sections/ParentHubSection';
 import ComparisonSection from './components/sections/ComparisonSection';
 import PricingSection from './components/sections/PricingSection';
 import TestimonialsSection from './components/sections/TestimonialsSection';
@@ -21,6 +22,7 @@ function App() {
         <WhySection />
         <ProgramsSection />
         <FeaturesSection />
+        <ParentHubSection />
         <ComparisonSection />
         <PricingSection />
         <TestimonialsSection />

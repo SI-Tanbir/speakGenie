@@ -30,7 +30,7 @@ const TestimonialsSection = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <svg
         key={index}
-        className={`w-5 h-5 ${
+        className={`w-4 h-4 lg:w-5 lg:h-5 ${
           index < rating ? 'text-yellow-400' : 'text-gray-300'
         }`}
         fill="currentColor"
@@ -42,46 +42,46 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+    <section className="py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
             What Families Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of families who have transformed their daily routines with Mindery Kids.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
             >
               {/* Rating */}
-              <div className="flex items-center mb-6">
+              <div className="flex items-center mb-4 lg:mb-6">
                 {renderStars(testimonial.rating)}
-                <span className="ml-2 text-sm text-gray-600">
+                <span className="ml-2 text-xs lg:text-sm text-gray-600">
                   {testimonial.rating}.0 out of 5
                 </span>
               </div>
 
               {/* Quote */}
-              <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 italic">
+              <blockquote className="text-base lg:text-lg text-gray-700 leading-relaxed mb-4 lg:mb-6 italic">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-green-100 rounded-full flex items-center justify-center text-2xl">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-100 to-green-100 rounded-full flex items-center justify-center text-xl lg:text-2xl">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">
+                  <div className="font-semibold text-gray-900 text-sm lg:text-base">
                     {testimonial.author}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-xs lg:text-sm text-gray-600">
                     {testimonial.role}
                   </div>
                 </div>
@@ -91,22 +91,22 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="text-center mt-16">
-          <div className="flex flex-wrap justify-center items-center gap-8 text-gray-500">
+        <div className="text-center mt-12 lg:mt-16">
+          <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8 text-gray-500 text-sm lg:text-base">
             <div className="flex items-center space-x-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span>10,000+ Happy Families</span>
             </div>
             <div className="flex items-center space-x-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span>4.9/5 Average Rating</span>
             </div>
             <div className="flex items-center space-x-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span>Child Development Experts</span>
