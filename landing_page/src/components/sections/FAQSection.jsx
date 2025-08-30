@@ -41,13 +41,13 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-16 lg:py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
+    <section id="faq" className="py-16 bg-white lg:py-20">
+      <div className="px-4 mx-auto max-w-4xl sm:px-6 lg:px-8">
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl lg:mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-600 sm:text-xl">
             Got questions? We've got answers. Here are the most common questions families ask us.
           </p>
         </div>
@@ -56,13 +56,13 @@ const FAQSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="overflow-hidden bg-white rounded-2xl border border-gray-200 shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 lg:px-8 py-4 lg:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="flex justify-between items-center px-6 py-4 w-full text-left transition-colors duration-200 lg:px-8 lg:py-6 hover:bg-gray-50"
               >
-                <h3 className="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="pr-4 text-base font-semibold text-gray-900 lg:text-lg">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
@@ -91,8 +91,8 @@ const FAQSection = () => {
                     : 'max-h-0 opacity-0 overflow-hidden'
                 }`}
               >
-                <div className="border-t border-gray-200 pt-4 lg:pt-6">
-                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base lg:text-lg">
+                <div className="pt-4 border-t border-gray-200 lg:pt-6">
+                  <p className="text-sm leading-relaxed text-gray-600 lg:text-base lg:text-lg">
                     {faq.answer}
                   </p>
                 </div>
@@ -102,15 +102,15 @@ const FAQSection = () => {
         </div>
 
         {/* Contact CTA */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6 text-sm lg:text-base">
+        <div className="mt-12 text-center">
+          <p className="mb-6 text-sm text-gray-600 lg:text-base">
             Still have questions? We're here to help!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 lg:px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base">
+          <div className="flex flex-col gap-4 justify-center sm:flex-row">
+            <button className="px-6 py-3 text-sm font-semibold text-white bg-purple-600 rounded-xl transition-all duration-300 transform lg:px-8 hover:bg-purple-700 hover:scale-105 hover:shadow-lg lg:text-base">
               Contact Support
             </button>
-            <button className="px-6 lg:px-8 py-3 bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-600 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base">
+            <button className="px-6 py-3 text-sm font-semibold text-purple-600 bg-white rounded-xl border-2 border-purple-600 transition-all duration-300 transform lg:px-8 hover:bg-gray-50 hover:scale-105 hover:shadow-lg lg:text-base">
               Live Chat
             </button>
           </div>

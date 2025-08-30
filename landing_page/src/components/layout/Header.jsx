@@ -41,13 +41,15 @@ const Header = () => {
             </div>
           </div>
 
+
+    <div className='flex gap-5'>
           {/* Desktop Navigation */}
           <nav className="hidden items-center space-x-10 lg:flex">
             {navigationItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="relative px-1 py-2 text-base font-medium text-gray-700 transition-colors duration-200 hover:text-purple-600 group"
+                className="relative px-1 py-2 text-base font-bold text-[#7b39ed] transition-colors duration-200 hover:text-purple-600 group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-200 group-hover:w-full"></span>
@@ -62,6 +64,8 @@ const Header = () => {
             </button>
           </div>
 
+    </div>
+        
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
