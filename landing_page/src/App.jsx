@@ -22,9 +22,9 @@ function App() {
         <WhySection />
         <ProgramsSection />
         <FeaturesSection />
-        <ParentHubSection />
         <ComparisonSection />
         <PricingSection />
+        <ParentHubSection />
         <TestimonialsSection />
         <FAQSection />
         <FinalCTASection />

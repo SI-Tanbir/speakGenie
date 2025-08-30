@@ -1,137 +1,112 @@
+import React from 'react';
+
 const PricingSection = () => {
   const plans = [
     {
-      id: 1,
-      name: "Starter",
+      title: "Starter",
+      tagline: "Perfect for new explorers",
       price: "Free",
-      description: "Perfect for new explorers",
       features: [
         "5 guided meditations",
-        "2 sleep stories",
-        "Parent starter kit",
-        "Basic progress tracking"
+        "2 sleep stories", 
+        "Parent starter kit"
       ],
-      buttonText: "Go Starter",
-      buttonColor: "from-gray-500 to-gray-600",
-      popular: false
+      buttonText: "Get Started",
+      buttonVariant: "primary"
     },
     {
-      id: 2,
-      name: "Premium",
-      price: "₹299",
-      period: "/mo",
-      description: "Unlimited access",
+      title: "Premium",
+      tagline: "Unlock full potential",
+      price: "₹299/mo",
       features: [
         "Unlimited meditations",
-        "Unlimited sleep stories",
-        "Printable guides & charts",
-        "Advanced progress insights",
-        "Priority support"
+        "Sleep stories & calming music",
+        "Printable guides for parents"
       ],
-      buttonText: "Buy Now",
-      buttonColor: "from-purple-500 to-purple-600",
-      popular: true
+      buttonText: "Upgrade Now",
+      buttonVariant: "primary"
     },
     {
-      id: 3,
-      name: "Family",
-      price: "₹499",
-      period: "/mo",
-      description: "For multiple kids",
+      title: "Family",
+      tagline: "For multiple kids",
+      price: "₹499/mo",
       features: [
         "4 child profiles",
         "Rewards & streaks",
-        "Classroom meditation pack",
-        "Family progress dashboard",
-        "Teacher resources"
+        "Classroom meditation pack"
       ],
       buttonText: "Get Family Plan",
-      buttonColor: "from-green-500 to-green-600",
-      popular: false
+      buttonVariant: "primary"
     }
   ];
 
   return (
-    <section id="pricing" className="py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
+    <section className="py-16 bg-purple-50">
+      <div className="container px-4 mx-auto">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-gray-800">
             Choose Your Plan
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Start free, cancel anytime. Choose the plan that best fits your family's needs.
+          <p className="text-lg text-gray-600">
+            Start free, cancel anytime. No hidden charges.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {plans.map((plan) => (
-            <div
-              key={plan.id}
-              className={`relative bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 ${
-                plan.popular 
-                  ? 'border-purple-500 scale-105' 
-                  : 'border-gray-200'
-              }`}
+        {/* Plans Grid */}
+        <div className="grid gap-8 mx-auto max-w-6xl md:grid-cols-3">
+          {plans.map((plan, index) => (
+            <div 
+              key={index}
+              className="p-8 text-center bg-white rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-purple-600 text-white px-4 lg:px-6 py-2 rounded-full text-xs lg:text-sm font-semibold">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              <div className="p-6 lg:p-8">
-                {/* Plan Header */}
-                <div className="text-center mb-6 lg:mb-8">
-                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-baseline justify-center mb-2">
-                    <span className="text-3xl lg:text-4xl font-bold text-gray-900">
-                      {plan.price}
-                    </span>
-                    {plan.period && (
-                      <span className="text-base lg:text-lg text-gray-600 ml-1">
-                        {plan.period}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm lg:text-base text-gray-600">{plan.description}</p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3 lg:space-y-4 mb-6 lg:mb-8">
-                  {plan.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-4 h-4 lg:w-5 lg:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-sm lg:text-base text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA Button */}
-                <button className={`w-full py-3 lg:py-4 bg-gradient-to-r ${plan.buttonColor} text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base`}>
-                  {plan.buttonText}
-                </button>
+              {/* Plan Title */}
+              <h3 className="mb-2 text-2xl font-bold text-gray-800">
+                {plan.title}
+              </h3>
+              
+              {/* Tagline */}
+              <p className="mb-6 text-gray-600">
+                {plan.tagline}
+              </p>
+              
+              {/* Price */}
+              <div className="mb-8">
+                <span className="text-4xl font-bold text-purple-600">
+                  {plan.price}
+                </span>
               </div>
+              
+              {/* Features */}
+              <ul className="mb-8 space-y-4">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex justify-center items-center">
+                    <svg 
+                      className="flex-shrink-0 mr-3 w-5 h-5 text-green-500" 
+                      fill="currentColor" 
+                      viewBox="0 0 20 20"
+                    >
+                      <path 
+                        fillRule="evenodd" 
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
+                        clipRule="evenodd" 
+                      />
+                    </svg>
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* CTA Button */}
+              <button className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-colors duration-200 ${
+                plan.buttonVariant === 'primary' 
+                  ? 'bg-purple-600 hover:bg-purple-700' 
+                  : 'bg-gray-600 hover:bg-gray-700'
+              }`}>
+                {plan.buttonText}
+              </button>
             </div>
           ))}
-        </div>
-
-        {/* Additional Info */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4 text-sm lg:text-base">
-            All plans include a 7-day free trial • No credit card required
-          </p>
-          <p className="text-xs lg:text-sm text-gray-500">
-            Need help choosing? <a href="#contact" className="text-purple-600 hover:text-purple-700 font-medium">Contact our team</a>
-          </p>
         </div>
       </div>
     </section>

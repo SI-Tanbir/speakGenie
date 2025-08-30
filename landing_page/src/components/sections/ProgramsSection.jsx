@@ -4,84 +4,103 @@ const ProgramsSection = () => {
       id: 1,
       title: "Little Explorers (4-6)",
       description: "5-minute stories with animal friends that teach belly-breathing, relaxing sounds, and gentle stretching.",
-      features: ["Cozy Corner", "Calm Music", "Sticker Badges"],
+      features: [
+        { name: "Cozy Corner", icon: "⭐" },
+        { name: "Calm Music", icon: "🎵" },
+        { name: "Sticker Badges", icon: "🏆" }
+      ],
       image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=500&fit=crop&crop=face",
       color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50"
+      imagePosition: "left"
     },
     {
       id: 2,
       title: "Brave Thinkers (7-10)",
       description: "Mindset stories, focus timers, and kindness practices that build confidence and classroom readiness.",
-      features: ["Focus Timer", "Gratitude Notes", "Streak Rewards"],
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=500&fit=crop&crop=face",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50"
+      features: [
+        { name: "Focus Timer", icon: "⏱️" },
+        { name: "Gratitude Notes", icon: "🍃" },
+        { name: "Mindful Rewards", icon: "🏆" }
+      ],
+      image: "https://plus.unsplash.com/premium_photo-1661821182906-e465194a34ac?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      color: "",
+      imagePosition: "right"
     },
     {
       id: 3,
       title: "Calm & Curious (11-14)",
-      description: "Longer meditations, reframing thoughts, and sleep stories for deeper rest and emotional balance.",
-      features: ["Mindset Minis", "Sleep Stories", "Goal Cards"],
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=500&fit=crop&crop=face",
+      description: "Deeper meditations, calming thoughts, and sleep stories for mindful rest and emotional balance.",
+      features: [
+        { name: "Mindful Moments", icon: "🌸" },
+        { name: "Sleep Stories", icon: "🌙" },
+        { name: "Goal Tracker", icon: "🎯" }
+      ],
+      image: "https://images.unsplash.com/photo-1660485722781-86dfe60917d5?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50"
+      imagePosition: "left",
+      customHeight: "h-[300px]"
     }
   ];
 
   return (
-    <section id="programs" className="py-16 lg:py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
+    <section id="programs" className="py-16 bg-white lg:py-20">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="mb-1">
+          <h2 className="mb-2 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-3xl lg:mb-2">
             Programs for Every Age
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Pick 'n' mix and match. Each program grows with your child.
+          <p className="text-gray-600 text-md">
+            Find a program that suits your child's needs, from playful explorations to calm, deep dives.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="space-y-8 lg:space-y-12">
+
+          
           {programs.map((program) => (
             <div
               key={program.id}
-              className="group bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="overflow-hidden bg-white rounded-2xl lg:rounded-3xl"
             >
-              {/* Image */}
-              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${program.color} opacity-20`}></div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 lg:p-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  {program.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 text-sm lg:text-base">
-                  {program.description}
-                </p>
-
-                {/* Feature Tags */}
-                <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
-                  {program.features.map((feature, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs lg:text-sm font-medium rounded-full border border-gray-200"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+              <div className={`grid lg:grid-cols-2 gap-6 lg:gap-8 items-center ${
+                program.imagePosition === 'left' ? 'lg:grid-flow-col' : 'lg:grid-flow-col-dense'
+              }`}>
+                {/* Image */}
+                <div className={`relative overflow-hidden ${
+                  program.imagePosition === 'left' ? 'lg:order-1' : 'lg:order-2'
+                } ${program.customHeight || 'h-48 sm:h-56 lg:h-full'}`}>
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="object-cover w-full h-full transition-all duration-500 ease-out transform hover:scale-105 hover:rotate-0.5"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${program.color} opacity-20 transition-opacity duration-300 group-hover:opacity-10`}></div>
                 </div>
 
-                {/* CTA Button */}
-                <button className={`w-full py-2.5 lg:py-3 bg-gradient-to-r ${program.color} text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm lg:text-base`}>
-                  Learn More
-                </button>
+                {/* Content */}
+                <div className={`p-6 lg:p-8 ${
+                  program.imagePosition === 'left' ? 'lg:order-2' : 'lg:order-1'
+                }`}>
+                  <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors duration-300 lg:text-2xl lg:mb-4 group-hover:text-purple-600">
+                    {program.title}
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600 lg:mb-6 lg:text-base">
+                    {program.description}
+                  </p>
+
+                  {/* Feature Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
+                    {program.features.map((feature, index) => (
+                      <span
+                        key={index}
+                        className="flex items-center px-3 py-1 space-x-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full border border-gray-200 lg:text-sm"
+                      >
+                        <span className="text-sm">{feature.icon}</span>
+                        <span>{feature.name}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
