@@ -42,17 +42,15 @@ const FAQSection = () => {
 
   return (
     <section id="faq" className="py-16 bg-white lg:py-20">
-      <div className="px-4 mx-auto max-w-4xl sm:px-6 lg:px-8">
-        <div className="mb-12 text-center lg:mb-16">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl lg:mb-6">
+      <div className="px-4 mx-auto max-w-[90%] sm:px-6 lg:px-8">
+        <div className="mb-12 lg:mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl lg:mb-1">
             Frequently Asked Questions
           </h2>
-          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-600 sm:text-xl">
-            Got questions? We've got answers. Here are the most common questions families ask us.
-          </p>
+       
         </div>
 
-        <div className="space-y-3 lg:space-y-4">
+        <div className="space-y-3 lg:space-y-2">
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
@@ -101,20 +99,7 @@ const FAQSection = () => {
           ))}
         </div>
 
-        {/* Contact CTA */}
-        <div className="mt-12 text-center">
-          <p className="mb-6 text-sm text-gray-600 lg:text-base">
-            Still have questions? We're here to help!
-          </p>
-          <div className="flex flex-col gap-4 justify-center sm:flex-row">
-            <button className="px-6 py-3 text-sm font-semibold text-white bg-purple-600 rounded-xl transition-all duration-300 transform lg:px-8 hover:bg-purple-700 hover:scale-105 hover:shadow-lg lg:text-base">
-              Contact Support
-            </button>
-            <button className="px-6 py-3 text-sm font-semibold text-purple-600 bg-white rounded-xl border-2 border-purple-600 transition-all duration-300 transform lg:px-8 hover:bg-gray-50 hover:scale-105 hover:shadow-lg lg:text-base">
-              Live Chat
-            </button>
-          </div>
-        </div>
+     
       </div>
     </section>
   );
