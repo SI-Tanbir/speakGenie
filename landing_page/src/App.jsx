@@ -1,4 +1,5 @@
 
+import React, { useState } from 'react';
 import Header from './components/layout/Header';
 import Hero from './components/sections/Hero';
 import WhySection from './components/sections/WhySection';
@@ -11,25 +12,34 @@ import TestimonialsSection from './components/sections/TestimonialsSection';
 import FAQSection from './components/sections/FAQSection';
 import FinalCTASection from './components/sections/FinalCTASection';
 import Footer from './components/layout/Footer';
+import TrialModal from './components/forms/TrialModal';
 import './App.css';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header onStartFreeClick={openModal} />
       <main>
-        <Hero />
+        <Hero onStartFreeClick={openModal} />
         <WhySection />
         <ProgramsSection />
         <FeaturesSection />
         <ComparisonSection />
-        <PricingSection />
+        <PricingSection onStartFreeClick={openModal} />
         <ParentHubSection />
         <TestimonialsSection />
         <FAQSection />
-        <FinalCTASection />
+        <FinalCTASection onStartFreeClick={openModal} />
       </main>
       <Footer />
+      
+      {/* Trial Modal */}
+      <TrialModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

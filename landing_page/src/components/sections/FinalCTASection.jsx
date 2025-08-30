@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FinalCTASection = () => {
+const FinalCTASection = ({ onStartFreeClick }) => {
   return (
     <section className="py-16 bg-white">
       <div className="container px-4 mx-auto">
@@ -19,7 +19,10 @@ const FinalCTASection = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 items-center sm:flex-row">
-              <button className="px-8 py-2 font-semibold text-white bg-purple-600 rounded-lg transition-colors duration-200 hover:bg-purple-700">
+              <button 
+                onClick={onStartFreeClick}
+                className="px-8 py-2 font-semibold text-white bg-purple-600 rounded-lg transition-colors duration-200 hover:bg-purple-700"
+              >
                 Create Account
               </button>
               <button className="px-8 py-2 font-semibold text-white bg-green-500 rounded-lg transition-colors duration-200 hover:bg-green-600">

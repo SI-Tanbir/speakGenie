@@ -1,4 +1,6 @@
-const Hero = () => {
+import React from 'react';
+
+const Hero = ({ onStartFreeClick }) => {
   const benefitTags = [
     {
       id: 1,
@@ -67,7 +69,10 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
-              <button className="px-8 py-4 text-lg font-semibold text-white bg-purple-600 rounded-xl shadow-lg transition-all duration-300 transform hover:bg-purple-700 hover:scale-105 hover:shadow-xl">
+              <button 
+                onClick={onStartFreeClick}
+                className="px-8 py-4 text-lg font-semibold text-white bg-purple-600 rounded-xl shadow-lg transition-all duration-300 transform hover:bg-purple-700 hover:scale-105 hover:shadow-xl"
+              >
                 Start Free Trial
               </button>
               <button className="px-8 py-4 text-lg font-semibold text-white bg-green-600 rounded-xl shadow-lg transition-all duration-300 transform hover:bg-green-700 hover:scale-105 hover:shadow-xl">

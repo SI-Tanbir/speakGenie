@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PricingSection = () => {
+const PricingSection = ({ onStartFreeClick }) => {
   const plans = [
     {
       title: "Starter",
@@ -12,7 +12,8 @@ const PricingSection = () => {
         "Parent starter kit"
       ],
       buttonText: "Get Started",
-      buttonVariant: "primary"
+      buttonVariant: "primary",
+      isFree: true
     },
     {
       title: "Premium",
@@ -24,7 +25,8 @@ const PricingSection = () => {
         "Printable guides for parents"
       ],
       buttonText: "Upgrade Now",
-      buttonVariant: "primary"
+      buttonVariant: "primary",
+      isFree: false
     },
     {
       title: "Family",
@@ -36,7 +38,8 @@ const PricingSection = () => {
         "Classroom meditation pack"
       ],
       buttonText: "Get Family Plan",
-      buttonVariant: "primary"
+      buttonVariant: "primary",
+      isFree: false
     }
   ];
 
@@ -98,11 +101,14 @@ const PricingSection = () => {
               </ul>
               
               {/* CTA Button */}
-              <button className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-colors duration-200 ${
-                plan.buttonVariant === 'primary' 
-                  ? 'bg-purple-600 hover:bg-purple-700' 
-                  : 'bg-gray-600 hover:bg-gray-700'
-              }`}>
+              <button 
+                onClick={plan.isFree ? onStartFreeClick : undefined}
+                className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-colors duration-200 ${
+                  plan.buttonVariant === 'primary' 
+                    ? 'bg-purple-600 hover:bg-purple-700' 
+                    : 'bg-gray-600 hover:bg-gray-700'
+                }`}
+              >
                 {plan.buttonText}
               </button>
             </div>
